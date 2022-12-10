@@ -39,14 +39,16 @@
 
                       ?>
                             <tr>
-                              <td><?php echo $cont++; ?></td>
+                              <td><?php echo $show->id; ?></td>
                               <td><?php echo $show->nome ?></td>
                               <td><?php echo $show->whats ?></td>
                               <td><?php echo $show->endereco ?></td>
                               <td><?php echo $show->observacoes ?></td>
                               <td>
-                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
+                               
+                                <a href="home.php?acao=editar&id=<?php echo $show->id; ?>" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-edit" style="padding: 5px"></i></a>
+                                <a href="conteudo/del-contato.php?idDel=<?php echo $show->id; ?>" onclick="return confirm('Deseja remover o contato')" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash" style="padding: 5px; margin: 0rem 0.125rem;"></i></a>
+                              
                               </td>
                             </tr>
 
@@ -63,7 +65,7 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                      <th style="text-align: center;">Código</th>
+                        <th style="text-align: center;">Código</th>
                         <th>Nome do Cliente</th>
                         <th>Whats</th>
                         <th>Endereço</th>
