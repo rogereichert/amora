@@ -5,9 +5,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Editar Cliente</h1>
+            <h1 class="card-title">Editar Cliente</h1>
           </div>
-
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -47,7 +46,29 @@
         ?>
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Dados do Cliente</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0" style="text-align: center; margin-bottom: 98px">
+                <?php 
+                  if (empty($foto)){
+                    $foto = "63949cffb80eb.jpg";
+                  }
+                ?>
+                <img src="../img/server/<?php echo $foto; ?>" alt="<?php echo $foto; ?>" title="<?php echo $foto; ?>" style="width: 200px; border-radius: 100%; margin-top: 30px">
+                <h1><?php echo $nome; ?></h1>
+                <strong>Whats: </strong><span><?php echo $whats; ?></span>
+                <p><?php echo $email; ?></p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -147,22 +168,8 @@
               ?>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Dados do Cliente</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0" style="text-align: center; margin-bottom: 98px">
-                <img src="../img/server/<?php echo $foto; ?>" alt="<?php echo $foto; ?>" title="<?php echo $foto; ?>" style="width: 200px; border-radius: 100%; margin-top: 30px">
-                <h1><?php echo $nome; ?></h1>
-                <strong>Whats: </strong><span><?php echo $whats; ?></span>
-                <p><?php echo $email; ?></p>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
+
+          
         </div>
         <!--/.col (right) -->
       </div>

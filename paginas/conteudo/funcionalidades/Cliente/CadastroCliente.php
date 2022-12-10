@@ -22,27 +22,37 @@ if (isset($_POST['botao'])) {
     $formatP = array("png", "jpg", "jpeg", "JPG", "gif");
     $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
 
-    if (in_array($extensao, $formatP)) {
+    if (!empty(in_array($extensao, $formatP))) {
 
-        $pasta = "../img/server/";
-        $temporario = $_FILES['foto']['tmp_name'];
-        $novoNome = uniqid() . ".$extensao";
+        if (in_array($extensao, $formatP)) {
 
-        if (move_uploaded_file($temporario, $pasta . $novoNome)) {
+            $pasta = "../img/server/";
+            $temporario = $_FILES['foto']['tmp_name'];
 
-            try {
+            if (move_uploaded_file($temporario, $pasta . $novoNome)) {
 
-                $cliente->setFoto($novoNome);
+                try {
 
-                $cliente->createClient();
-            } catch (PDOException $e) {
+                    $cliente->setFoto($novoNome);
+                    $cliente->createClient();
+                } catch (PDOException $e) {
 
-                echo $e->getMessage();
+                    echo $e->getMessage();
+                }
+            } else {
+                echo "Erro, não foi possível fazer o upload do arquivo!";
             }
         } else {
-            echo "Erro, não foi possível fazer o upload do arquivo!";
+            echo "Formato Inválido " . $extensao;
         }
     } else {
-        echo "Formato Inválido";
+        try {
+            $novoNome = "63949cffb80eb.jpg";
+            $cliente->setFoto($novoNome);
+            $cliente->createClient();
+        } catch (PDOException $e) {
+
+            echo $e->getMessage();
+        }
     }
 }
