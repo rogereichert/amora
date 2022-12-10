@@ -55,21 +55,13 @@
                     </tfoot>
                   </table>
                 </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
+            </section>
           </div>
-          <!-- /.col -->
+          <!-- /.card -->
         </div>
-        <!-- /.row -->
-
+        <!-- /.col -->
       </div>
       <!-- /.container-fluid -->
     </section>
   </div>
-  </div>
-  </div>
-  </div>
-  </section>
-  </div>
-  </script>
