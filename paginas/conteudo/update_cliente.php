@@ -59,8 +59,8 @@
 
           <div class="dados" style="display: flex; flex-direction: column;">
             <h1><?php echo $nome; ?></h1>
-            <?php echo "Whats: " .  $whats; ?>
-            <strong>Endreço: </strong><?php echo $endereco; ?>
+            <div><strong>Whats: </strong><?php echo $whats; ?></div>
+            <div><strong>Endereço: </strong><?php echo $endereco; ?></div>
           </div>
         </div>
 
