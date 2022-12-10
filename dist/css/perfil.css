@@ -1,0 +1,13 @@
+.btn-alterar{
+    
+    background-color: #BC5050 !important;
+    border: none;
+}
+
+.btn-alterar:hover{
+    background-color: #D15959 !important;
+}
+
+.cd-footer{
+    background-color: #fff !important;
+}
