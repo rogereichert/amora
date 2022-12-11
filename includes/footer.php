@@ -44,7 +44,15 @@
       "responsive": true,
       "lengthChange": true,
       "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      "buttons": [
+       
+        "copy",
+        "csv",
+        "excel",
+        "pdf",
+        "print",
+        "colvis",
+      ],
       "language": {
         "sEmptyTable": "Nenhum registro encontrado",
         "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -72,7 +80,8 @@
           "print": "Imprimir",
           "colvis": "Visibilidade de colunas"
         }
-      }
+      },
+
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,

@@ -110,7 +110,7 @@ include_once('sair.php');
     <aside class="main-sidebar sidebar-dark-primary elevation-4 painel">
       <!-- Brand Logo -->
       <a href="#" class="brand-link" style="border-bottom: none; display: flex; align-items: center; justify-content: center;">
-        <img src="../img/amora1.png" alt="" style="width: 80%; ">
+        <img src="../img/amora2.png" alt="" style="width: 80%; ">
       </a>
 
       <!-- Sidebar -->
