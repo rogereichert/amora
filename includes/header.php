@@ -44,7 +44,7 @@ include_once('sair.php');
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="../dist/css/estilo.css">
-  <link rel="stylesheet" href="../dist/css/perfil.css">  
+  <link rel="stylesheet" href="../dist/css/perfil.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -56,7 +56,7 @@ include_once('sair.php');
     $usuarioLogado = $_SESSION['loginUser'];
     $usuarioSenha = $_SESSION['senhaUser'];
     $usuarioId    = $_SESSION['idUser'];
-    
+
     $usuario = new Usuario;
 
     $usuario->setUsuario($usuarioLogado);
@@ -121,7 +121,7 @@ include_once('sair.php');
             <img src="../img/server/<?php echo $usuario->getFoto() ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="home.php?acao=perfil" class="d-block menu-link "><?php echo $usuario->getNome();?></a>
+            <a href="home.php?acao=perfil" class="d-block menu-link "><?php echo $usuario->getNome(); ?></a>
           </div>
         </div>
 
@@ -163,6 +163,12 @@ include_once('sair.php');
                   <a href="home.php?acao=cadastrar_fornecedor" class="nav-link menu-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Fornecedores</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=cadastrar_pedido" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pedidos</p>
                   </a>
                 </li>
               </ul>

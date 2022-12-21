@@ -2,7 +2,7 @@
 try{
 
     @DEFINE('HOST','localhost');
-    @DEFINE('BD','teste');
+    @DEFINE('BD','amora');
     @DEFINE('USER','root');
     @DEFINE('PASS','');
 
