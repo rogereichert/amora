@@ -53,7 +53,7 @@
                                       <div class="row">
                                           <div class="col-6">
                                               <label>Capa:</label>
-                                              <select class="custom-select">
+                                              <select class="custom-select" name="capa" id="capa">
                                                   <option>Capa Holográfica</option>
                                                   <option>Capa Fosco</option>
                                                   <option>Capa Brilhante</option>
@@ -62,7 +62,7 @@
 
                                           <div class="col-6">
                                               <label>Prioridade:</label>
-                                              <select class="custom-select">
+                                              <select class="custom-select" name="prioridade" id="prioridade">
                                                   <option>Urgente</option>
                                                   <option>Prazo Comum</option>
                                                   <option>Sem Prazo</option>
@@ -88,26 +88,6 @@
                           <?php
                             include_once('funcionalidades/Pedidos/pedido.php');
                           ?>
-                          <div class="form-group">
-                              <p>
-                                  <?php
-                                    if (isset($_POST['nome'])) {
-                                        $datafin = $_POST['datafin'];
-                                        echo $datafin . " - " . "  ";
-                                        echo "Data de inicio: " . date("d/m/Y", strtotime($datafin));
-                                    }
-                                    ?>
-                              </p>
-                              <p>
-                                  <?php
-                                    if (isset($_POST['nome'])) {
-                                        $data = $_POST['data'];
-                                        echo $data . " - " . "  ";
-                                        echo "Data de fim: " . date("d/m/Y", strtotime($data));
-                                    }
-                                    ?>
-                              </p>
-                          </div>
                       </div>
                   </div>
               </div>
