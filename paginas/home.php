@@ -18,7 +18,20 @@ if (isset($_GET['acao'])) {
     include_once('../paginas/conteudo/cadastro_insumo.php');
   } elseif ($acao == 'cadastrar_pedido') {
     include_once('../paginas/conteudo/cadastro_pedido.php');
+  } elseif ($acao == 'relatorio_pedido') {
+    include_once('../paginas/conteudo/relatorio_pedido.php');
+  } elseif ($acao == 'teste') {
+    include_once('../paginas/conteudo/teste.php');
+  } elseif ($acao == 'cadastrar_venda') {
+    include_once('../paginas/conteudo/cadastro_venda.php');
+  } elseif ($acao == 'relatorio_venda') {
+    include_once('../paginas/conteudo/relatorio_venda.php');
+  } elseif ($acao == 'cadastrar_caixa') {
+    include_once('../paginas/conteudo/cadastro_caixa.php');
+  } elseif ($acao == 'relatorio_caixa') {
+    include_once('../paginas/conteudo/relatorio_caixa.php');
   }
+
 } else {
   include_once('../paginas/conteudo/cadastro_cliente.php');
 }

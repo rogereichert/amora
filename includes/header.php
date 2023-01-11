@@ -24,7 +24,7 @@ include_once('sair.php');
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free-6.2.1/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
@@ -43,6 +43,7 @@ include_once('sair.php');
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
   <link rel="stylesheet" href="../dist/css/estilo.css">
   <link rel="stylesheet" href="../dist/css/perfil.css">
 </head>
@@ -171,8 +172,21 @@ include_once('sair.php');
                     <p>Pedidos</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=cadastrar_venda" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Vendas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=cadastrar_caixa" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Movimentação Caixa</p>
+                  </a>
+                </li>
               </ul>
             </li>
+
             <li class="nav-item">
               <a href="#" class="nav-link menu-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -184,14 +198,31 @@ include_once('sair.php');
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="home.php?acao=relatorio_cliente" class="nav-link menu-link">
-                    <i class="nav-icon fas fa-chart-pie"></i>
-                    <p>
-                      Clientes
-                    </p>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Clientes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=relatorio_pedido" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pedidos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=relatorio_venda" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Vendas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="home.php?acao=relatorio_caixa" class="nav-link menu-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Caixa</p>
                   </a>
                 </li>
               </ul>
             </li>
+
             <li class="nav-item">
               <a href="#" class="nav-link menu-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -200,6 +231,8 @@ include_once('sair.php');
                 </p>
               </a>
             </li>
+
+           
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

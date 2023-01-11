@@ -1,3 +1,10 @@
+  <?php
+
+    require 'funcionalidades/Pedidos/pedido.php';
+
+
+    ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -25,14 +32,49 @@
                               <div class="card-body">
                                   <div class="form-group">
                                       <div class="row">
-                                          <div class="col-10">
+                                          <div class="col-4">
+                                              <label for="exampleInputEmail1">Nº Pedido:</label>
+                                              <input type="text" class="form-control" name="id" id="id" disabled placeholder="<?php echo mostrarDados() ?>">
+                                          </div>
+                                          <div class="col-8">
                                               <label for="exampleInputEmail1">Nome:</label>
-                                              <input type="text" class="form-control" name="nome" id="nome" required placeholder="Digite um nome">
+
+                                              <div class="form-group">
+                                                  <select class="form-control select2bs4" style="width: 100%;" name="nome" id="nome">
+                                                      <option selected="selected">Selecione...</option>
+                                                      <?php
+
+                                                        require '../config/conexao.php';
+
+                                                        $select = "SELECT * FROM tbl_clientes ORDER BY nome";
+
+                                                        try {
+
+                                                            $result = $conect->prepare($select);
+                                                            $result->execute();
+                                                            $contar = $result->rowCount();
+
+                                                            if ($contar > 0) {
+                                                                while ($show = $result->FETCH(PDO::FETCH_OBJ)) {
+
+                                                        ?>
+
+                                                                  <option value="<?php echo $show->id ?>"><?php echo $show->nome ?></option>
+
+                                                      <?php
+
+                                                                }
+                                                            }
+                                                        } catch (PDOException $e) {
+
+                                                            echo $e->getMessage();
+                                                        }
+
+                                                        ?>
+                                                  </select>
+                                              </div>
                                           </div>
-                                          <div class="col-2">
-                                              <label for="id">Número Pedido:</label>
-                                              <input type="text" class="form-control" name="id" id="id" disabled>
-                                          </div>
+
                                       </div>
                                   </div>
 
@@ -87,7 +129,7 @@
                           </form>
                           <?php
                             include_once('funcionalidades/Pedidos/pedido.php');
-                          ?>
+                            ?>
                       </div>
                   </div>
               </div>

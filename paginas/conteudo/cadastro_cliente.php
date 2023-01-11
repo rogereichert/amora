@@ -19,9 +19,6 @@
           <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
-              <div class="card-header" style="background-color: #E9BCBA; color: #BC5050">
-                <h3 class="card-title">Cadastrar Clientes</h3>
-              </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form role="form" action="" method="post" enctype="multipart/form-data">
@@ -132,89 +129,6 @@
               ?>
             </div>
           </div>
-
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header" style="background-color: #E9BCBA; color: #BC5050">
-                <h3 class="card-title">Clientes Recentes</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0" style="overflow-x:auto;">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">#</th>
-                      <th style="width: 40px">Ações</th>
-                      <th>Nome</th>
-                      <th>whats</th>
-                      <th>Cep</th>
-                      <th>Endereço</th>
-                      <th>Bairro</th>
-                      <th>Número</th>
-                      <th>Cidade</th>
-                      <th>Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    require "../config/conexao.php";
-                    $select = "SELECT * FROM tbl_clientes ORDER BY id DESC LIMIT 5";
-                    try {
-                      $result = $conect->prepare($select);
-                      $cont = 1;
-                      $result->execute();
-                      $contar = $result->rowCount();
-                      if ($contar > 0) {
-                        while ($show = $result->FETCH(PDO::FETCH_OBJ)) {
-                    ?>
-                          <tr>
-                            <td><?php echo $cont++; ?></td>
-                            <td>
-                              <div class="btn-group">
-                                <a href="home.php?acao=editar&id=<?php echo $show->id; ?>" class="btn btn-success" title="Editar Contato"><i class="fas fa-user-edit"></i></button>
-                                  <a href="conteudo/del-contato.php?idDel=<?php echo $show->id; ?>" onclick="return confirm('Deseja remover o contato')" class="btn btn-danger" title="Remover Contato"><i class="fas fa-user-times"></i></a>
-                              </div>
-                            </td>
-
-                            <td><?php echo $show->nome; ?></td>
-                            <td>
-                              <?php echo $show->whats; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->cep; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->endereco; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->bairro; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->numero; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->cidade; ?>
-                            </td>
-                            <td>
-                              <?php echo $show->estado; ?>
-                            </td>
-                          </tr>
-                    <?php
-                        }
-                      } else {
-                      }
-                    } catch (PDOException $e) {
-                      echo '<strong>ERRO DE PDO= </strong>' . $e->getMessage();
-                    }
-                    ?>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-
         </div>
         <!--/.col (right) -->
       </div>

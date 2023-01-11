@@ -7,6 +7,7 @@
           <div class="card-header">
             <h1 class="card-title">Registro dos Clientes</h1>
           </div>
+          
           <div class="card-body">
             <section class="content">
               <div class="row">
@@ -18,6 +19,7 @@
                         <th>Código</th>
                         <th>Nome do Cliente</th>
                         <th>Whats</th>
+                        <th>E-mail</th>
                         <th>Endereço</th>
                         <th>Observações</th>
                         <th>Ações</th>
@@ -42,13 +44,14 @@
                               <td><?php echo $show->id; ?></td>
                               <td><?php echo $show->nome ?></td>
                               <td><?php echo $show->whats ?></td>
+                              <td><?php echo $show->email ?></td>
                               <td><?php echo $show->endereco ?></td>
                               <td><?php echo $show->observacoes ?></td>
                               <td>
-                               
-                                <a href="home.php?acao=editar&id=<?php echo $show->id; ?>" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-edit" style="padding: 5px"></i></a>
-                                <a href="conteudo/del-contato.php?idDel=<?php echo $show->id; ?>" onclick="return confirm('Deseja remover o contato')" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash" style="padding: 5px; margin: 0rem 0.125rem;"></i></a>
-                              
+
+                                <a href="home.php?acao=editar&id=<?php echo $show->id; ?>" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-edit" style="padding: 0.500rem; margin: 0rem 0.225rem;"></i></a>
+                                <a href="conteudo/del-contato.php?idDel=<?php echo $show->id; ?>" onclick="return confirm('Deseja remover o contato')" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash" style="padding: 0.500rem; margin: 0rem 0.300rem;"></i></a>
+
                               </td>
                             </tr>
 
@@ -64,10 +67,11 @@
 
                     </tbody>
                     <tfoot>
-                      <tr>
+                    <tr style="text-align: center;">
                         <th style="text-align: center;">Código</th>
                         <th>Nome do Cliente</th>
                         <th>Whats</th>
+                        <th>Email</th>
                         <th>Endereço</th>
                         <th>Observações</th>
                         <th>Ações</th>

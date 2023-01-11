@@ -32,11 +32,13 @@
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.13.1/i18n/pt-BR.json"></script>
-
-<!-- AdminLTE App -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+
+<!-- fullCalendar 2.2.5 -->
+<script src="../plugins/moment/moment.min.js"></script>
+<script src="../plugins/fullcalendar/main.js"></script>
+
 <!-- Page specific script -->
 <script>
   $(function() {
@@ -45,13 +47,19 @@
       "lengthChange": true,
       "autoWidth": false,
       "buttons": [
-       
-        "copy",
-        "csv",
-        "excel",
-        "pdf",
-        "print",
         "colvis",
+        {
+          extend: 'print',
+          exportOptions: {
+            columns: ':visible',
+          },
+        },
+        {
+          extend: 'pdf',
+          exportOptions: {
+            columns: ':visible',
+          },
+        }
       ],
       "language": {
         "sEmptyTable": "Nenhum registro encontrado",
@@ -78,7 +86,7 @@
         "buttons": {
           "copy": "Copiar",
           "print": "Imprimir",
-          "colvis": "Visibilidade de colunas"
+          "colvis": "Colunas"
         }
       },
 
@@ -95,30 +103,39 @@
   });
 </script>
 <script type="text/javascript">
+  function calculaDataFin() {
+    var datainicial = document.getElementById("data").value;
+    var dias = 12;
+    var partes = datainicial.split("-");
+    var ano = partes[0];
+    var mes = partes[1] - 1;
+    var dia = partes[2];
 
-function calculaDataFin() {
-var datainicial = document.getElementById("data").value;
-var dias = 12;
-var partes = datainicial.split("-");
-var ano = partes[0];
-var mes = partes[1]-1;
-var dia = partes[2];
+    datainicial = new Date(ano, mes, dia);
+    datafinal = new Date(datainicial);
+    datafinal.setDate(datafinal.getDate() + dias);
 
-datainicial = new Date(ano,mes,dia);
-datafinal = new Date(datainicial);
-datafinal.setDate(datafinal.getDate() + dias);
+    var dd = ("0" + datafinal.getDate()).slice(-2);
+    var mm = ("0" + (datafinal.getMonth() + 1)).slice(-2);
+    var y = datafinal.getFullYear();
 
-var dd = ("0" + datafinal.getDate()).slice(-2);
-var mm = ("0" + (datafinal.getMonth()+1)).slice(-2);
-var y = datafinal.getFullYear();
+    var dataformatada = y + '-' + mm + '-' + dd;
+    var valor = document.getElementById('datafin').value = dataformatada;
+    return valor;
 
-var dataformatada = y + '-' + mm + '-' + dd;
-var valor = document.getElementById('datafin').value = dataformatada;
-return valor;
-
-}
-
+  }
 </script>
+
+<script>
+  var data = new Date();
+  var dia = String(data.getDate()).padStart(2, '0');
+  var mes = String(data.getMonth() + 1).padStart(2, '0');
+  var ano = data.getFullYear();
+  dataAtual = dia + '/' + mes + '/' + ano;
+  document.getElementById("dataVenda").value = dataAtual;
+</script>
+
+
 </body>
 
 </html>

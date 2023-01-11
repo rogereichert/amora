@@ -28,7 +28,8 @@ if (isset($_POST['botao'])) {
 
             $pasta = "../img/server/";
             $temporario = $_FILES['foto']['tmp_name'];
-
+            $novoNome = uniqid() . ".$extensao";
+            
             if (move_uploaded_file($temporario, $pasta . $novoNome)) {
 
                 try {

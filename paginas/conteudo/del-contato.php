@@ -13,9 +13,17 @@ if(isset($_GET['idDel'])){
 
         $contar = $result->rowCount();
         if($contar>0){
-            header("Location: ../home.php");
+            ?>
+            <div class="alert alert-sucess" role="alert">
+                Excluído com sucesso
+            </div>
+
+            <?php
+            //header("Location: ../home.php?acao=relatorio_cliente");
         }else{
-            header("Location: ../home.php");
+            echo 'erro';
+            //header("Location: ../home.php");
+            
         }
 
     }catch(PDOException $e){

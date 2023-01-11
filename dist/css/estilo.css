@@ -83,3 +83,17 @@ th{
   background-color: blue !important;
  
 }
+
+.table td, .table th {
+  vertical-align: middle !important;
+}
+
+.labelTotal{
+  font-size: 4rem !important;
+}
+
+.testecontainer{
+  width: 100% !important;
+  height: 20px !important;
+
+}
